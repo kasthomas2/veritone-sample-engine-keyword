@@ -27,7 +27,7 @@ app.post('/process', chunkUpload, async (req, res)=>{
 
     try {
         let buffer = req.file.buffer.toString();
-        console.log("\nBody was: \n" + JSON.stringify(req.body,null,4));
+        // console.log("\nBody was: \n" + JSON.stringify(req.body,null,4));
 
         timingStart = 1 * new Date;
         let output = KeywordExtraction.getOutput( buffer, null );
