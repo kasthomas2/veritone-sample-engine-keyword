@@ -4,7 +4,8 @@ module.exports = {
 
         console.log("\n Inside getOutput() ");
 
-        // Pass the chunk buffer in, get word-array out:
+        // Private inner method.
+        // Pass the chunk buffer (as a string) in, get unduped word-array out:
         let getWordArray = (buffer) => {
             console.log("\n Inside getWordArray() ");
 
@@ -30,6 +31,7 @@ module.exports = {
             return results;
         };
 
+        // Private inner method.
         // Pass word array in, get [ keywordObject ] out
         let getVtnObjectArray = (input) => {
 
@@ -57,11 +59,11 @@ module.exports = {
                 ],
                 "object": vtnObjectArray
             };
-
             return output;
         } catch (e) {
             console.log("Exception: " + e.toString())
         }
+        return ""; // we reach this iff an exception happened
     }
 
 };
